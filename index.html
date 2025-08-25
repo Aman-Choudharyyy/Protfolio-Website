@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              // Light Theme: Rosewater & Champagne Gold
+              'rosewater': '#FFF5F5',
+              'deep-rosewood': '#4B3F40',
+              'champagne-gold': '#DABFAF',
+              'dusty-blush': '#BC8C7A',
+              'muted-cocoa': '#9E8C89',
+              'soft-petal': '#FFF8F8',
+              'blushed-linen': '#E8DCD5',
+
+              // Dark Theme: Lavender Twilight
+              'deep-twilight': '#1F1B24',
+              'lavender-mist': '#EDE6F4',
+              'dusty-lavender': '#B18BD8',
+              'violet-glow': '#A66CFF',
+              'plum-grey': '#A29BB0',
+              'lavender-shadow': '#2B2735',
+              'soft-graphite': '#3C3947',
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      // Prevents FOUC (Flash of Unstyled Content)
+      if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1"
+  }
+}
+</script>
+</head>
+  <body class="bg-rosewater text-deep-rosewood dark:bg-deep-twilight dark:text-lavender-mist leading-relaxed antialiased selection:bg-dusty-blush selection:text-white dark:selection:bg-violet-glow dark:selection:text-deep-twilight">
+    <div id="root"></div>
+  </body>
+</html>

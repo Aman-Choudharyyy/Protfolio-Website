@@ -1,0 +1,16 @@
+
+import React from 'react';
+import ProjectCard from './ProjectCard';
+import { PROJECTS } from '../constants';
+
+const Projects: React.FC = () => {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+      {PROJECTS.map((project, index) => (
+        <ProjectCard key={index} project={project} />
+      ))}
+    </div>
+  );
+};
+
+export default Projects;
