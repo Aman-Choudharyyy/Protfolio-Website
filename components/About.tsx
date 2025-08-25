@@ -5,14 +5,9 @@ import { PORTFOLIO_DATA, ABOUT_CARDS } from '../constants';
 const About: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-deep-rosewood dark:text-lavender-mist sm:text-4xl">
-          About Me
-        </h2>
-        <p className="mt-4 text-lg text-muted-cocoa dark:text-plum-grey">
-          {PORTFOLIO_DATA.aboutSubtitle}
-        </p>
-      </div>
+      <p className="text-center text-lg text-muted-cocoa dark:text-plum-grey -mt-4 mb-12">
+        {PORTFOLIO_DATA.aboutSubtitle}
+      </p>
 
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
         <div className="lg:col-span-3 space-y-4 text-muted-cocoa dark:text-plum-grey leading-relaxed">

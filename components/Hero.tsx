@@ -1,8 +1,8 @@
+
 import React from 'react';
 import { PORTFOLIO_DATA } from '../constants';
 
 interface HeroProps {
-  onViewWorkClick: () => void;
 }
 
 const SocialIcon: React.FC<{ href: string; ariaLabel: string; children: React.ReactNode }> = ({ href, ariaLabel, children }) => (
@@ -17,7 +17,7 @@ const SocialIcon: React.FC<{ href: string; ariaLabel: string; children: React.Re
     </a>
 );
 
-const Hero: React.FC<HeroProps> = ({ onViewWorkClick }) => {
+const Hero: React.FC<HeroProps> = () => {
   const { name, title, about, contact } = PORTFOLIO_DATA;
 
   const handleDownload = () => {
@@ -34,7 +34,7 @@ const Hero: React.FC<HeroProps> = ({ onViewWorkClick }) => {
   };
 
   return (
-    <section id="hero" className="w-full min-h-screen flex items-center justify-center bg-rosewater dark:bg-deep-twilight relative overflow-hidden px-4">
+    <section id="hero" className="w-full min-h-screen flex items-center justify-center bg-rosewater dark:bg-deep-twilight relative overflow-hidden px-4 scroll-mt-20">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-soft-petal/30 via-rosewater to-rosewater dark:from-lavender-shadow/30 dark:via-deep-twilight dark:to-deep-twilight"></div>
       <div className="container mx-auto z-10 animate-fade-in-up">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
@@ -60,12 +60,12 @@ const Hero: React.FC<HeroProps> = ({ onViewWorkClick }) => {
               {about.join(' ')}
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <button
-                onClick={onViewWorkClick}
+              <a
+                href="#projects"
                 className="inline-flex items-center justify-center rounded-lg bg-dusty-blush dark:bg-violet-glow px-8 py-3 text-base font-medium text-white dark:text-deep-twilight shadow-sm filter hover:brightness-105 focus:outline-none focus:ring-2 focus:ring-champagne-gold focus:ring-offset-2 focus:ring-offset-rosewater dark:focus:ring-offset-deep-twilight transition-all duration-300"
               >
                 View My Work
-              </button>
+              </a>
               <button
                 onClick={handleDownload}
                 className="inline-flex items-center justify-center rounded-lg border-2 border-dusty-blush dark:border-violet-glow bg-transparent px-8 py-3 text-base font-medium text-dusty-blush dark:text-violet-glow hover:bg-soft-petal dark:hover:bg-lavender-shadow/50 focus:outline-none focus:ring-2 focus:ring-muted-cocoa dark:focus:ring-plum-grey focus:ring-offset-2 focus:ring-offset-rosewater dark:focus:ring-offset-deep-twilight transition-colors duration-300"
